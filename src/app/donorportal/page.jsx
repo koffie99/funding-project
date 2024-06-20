@@ -55,40 +55,59 @@ export default function Campaigns() {
 
   return (
     <main className="min-h-[100vh] bg-[#092635]">
-      {/* Campaigns */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-8">
-        {data?.map((campaign, index) => (
-          <div
-            key={index}
-            className="bg-[#142a35] text-white p-4 rounded shadow mb-4"
-          >
-            <Image
-              width={300}
-              height={300}
-              src={campaign.photoUrl}
-              alt={campaign.photoUrl}
-              className="mb-4 rounded"
-            />
-            <h2 className="text-lg mb-2 font-bold">{campaign.title}</h2>
-            <p className="font-regular text-sm text-[#e2e2e2]">
-              {campaign.description}
-            </p>
-            <p className="mt-4 text-sm p-1">
-              {campaign.fundsRaised.toString()} Eth raised so far
-            </p>
-            <div className="mt-7 flex items-center justify-between">
-              <p className="bg-[#45554d] w-fit p-2 px rounded">
-                {campaign ? "Goal: Eth" : ""} {campaign.goal.toString()}
-              </p>
-              <button
-                className="text-[#28AE73] p-3 px-5 rounded-full"
-                onClick={() => handleDonate({ index, ...campaign })}
+      {/* nav */}
+      <div className="bg-[#0e2029] h-[12vh] w-full flex items-center justify-between gap-2 px-16">
+        <div className="flex items-center gap-3">
+          <Image width={40} height={40} src="/images/logo.png" alt="logo" />
+          <p className="text-white">
+            <span className="font-bold">Block</span>Bond
+          </p>
+        </div>
+        <div className="p-4">
+          <ConnectButton client={client} />
+        </div>
+      </div>
+
+      {/* content */}
+      <div className="p-8">
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {data?.map((campaign, index) => (
+              <div
+                key={index}
+                className="bg-[#142a35] text-white p-4 rounded shadow mb-4"
               >
-                Donate
-              </button>
-            </div>
+                <Image
+                  width={300}
+                  height={300}
+                  src={campaign.photoUrl}
+                  alt={campaign.photoUrl}
+                  className="mb-4 rounded"
+                />
+                <h2 className="text-lg mb-2 font-bold">{campaign.title}</h2>
+                <p className="font-regular text-sm text-[#e2e2e2]">
+                  {campaign.description}
+                </p>
+                <p className="mt-4 text-sm p-1">
+                  {campaign.fundsRaised.toString()} Eth raised so far
+                </p>
+                <div className="mt-7 flex items-center justify-between">
+                  <p className="bg-[#45554d] w-fit p-2 px rounded">
+                    {campaign ? "Goal: Eth" : ""} {campaign.goal.toString()}
+                  </p>
+                  <button
+                    className="text-[#28AE73] p-3 px-5 rounded-full"
+                    onClick={() => handleDonate({ index, ...campaign })}
+                  >
+                    Donate
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        )}
       </div>
 
       {/* Modal */}
