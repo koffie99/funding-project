@@ -1,9 +1,17 @@
-"use client"
+"use client";
 import { useState } from "react";
 import Image from "next/image";
-import { createThirdwebClient, getContract } from "thirdweb";
+import {
+  createThirdwebClient,
+  getContract,
+  prepareContractCall,
+} from "thirdweb";
 import { defineChain } from "thirdweb/chains";
-import { useReadContract, ConnectButton, useSendTransaction } from "thirdweb/react";
+import {
+  useReadContract,
+  ConnectButton,
+  useSendTransaction,
+} from "thirdweb/react";
 import { ethers } from "ethers";
 import { client } from "../client";
 
@@ -34,19 +42,13 @@ export default function Campaigns() {
 
   const confirmDonation = async () => {
     try {
-      const iface = new ethers.utils.Interface([
-        "function donate(uint256 _campaignId) payable"
-      ]);
-
-      const data = iface.encodeFunctionData("donate", [selectedCampaign.index]);
-
-      const transaction = {
-        to: contract.address,
+      const transaction = prepareContractCall({
+        contract,
+        method: "donate",
+        params: [selectedCampaign.index],
         value: ethers.utils.parseEther(donationAmount),
-        data: data,
-      };
-
-      sendTransaction({ ...transaction, client });
+      });
+      sendTransaction(transaction);
       setModalOpen(false);
     } catch (error) {
       console.error("Error while donating:", error);
@@ -91,7 +93,8 @@ export default function Campaigns() {
                   {campaign.description}
                 </p>
                 <p className="mt-4 text-sm p-1">
-                  {campaign.fundsRaised.toString()} Eth raised so far
+                  {BigInt(campaign.fundsRaised).toString()} Eth raised
+                  so far
                 </p>
                 <div className="mt-7 flex items-center justify-between">
                   <p className="bg-[#45554d] w-fit p-2 px rounded">
@@ -131,13 +134,13 @@ export default function Campaigns() {
             />
             <div className="flex justify-end">
               <button
-                className="bg-[#28AE73] text-white p-2 rounded mr-2"
+                className="bg-[#28AE73] text-white p-2 rounded mr-2 border-none"
                 onClick={confirmDonation}
               >
                 Donate
               </button>
               <button
-                className="bg-red-500 text-white p-2 rounded"
+                className=" text-[#818181] p-2"
                 onClick={() => setModalOpen(false)}
               >
                 Cancel
