@@ -1,6 +1,5 @@
 import React from 'react'
 import Profilecard from "./Profilecard"
-// import styles from '../styles/Profilecard.module.css';
 import contributors from './utils/contributors';
 
 

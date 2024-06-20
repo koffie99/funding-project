@@ -3,8 +3,8 @@ import React, { useEffect } from "react";
 import Splash from "./screens/Splash";
 import About from "./screens/About";
 import Features from "./screens/Features";
-import Works from "./screens/Works";
-// import Contributors from "./screens/Contributors"
+// import Works from "./screens/Works";
+import Contributors from "./screens/Contributors"
 import Footer from "./screens/Footer"
 
 const Home = () => {
@@ -17,10 +17,10 @@ const Home = () => {
       <Splash />
       <About />
       <Features />
-      <Works
+      {/* <Works
         images={["/images/kite.png", "/images/kite.png", "/images/kite.png"]}
-      />
-      {/* <Contributors /> */}
+      /> */}
+      <Contributors />
       <Footer />
     </div>
   );

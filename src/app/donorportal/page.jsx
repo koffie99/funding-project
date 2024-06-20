@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import Link from 'next/link'
 import {
   createThirdwebClient,
   getContract,
@@ -59,12 +60,12 @@ export default function Campaigns() {
     <main className="min-h-[100vh] bg-[#092635]">
       {/* nav */}
       <div className="bg-[#0e2029] h-[12vh] w-full flex items-center justify-between gap-2 px-16">
-        <div className="flex items-center gap-3">
+        <Link href='/' className="flex items-center gap-3">
           <Image width={40} height={40} src="/images/logo.png" alt="logo" />
           <p className="text-white">
             <span className="font-bold">Block</span>Bond
           </p>
-        </div>
+        </Link>
         <div className="p-4">
           <ConnectButton client={client} />
         </div>
@@ -73,7 +74,15 @@ export default function Campaigns() {
       {/* content */}
       <div className="p-8">
         {isLoading ? (
-          <p>Loading...</p>
+          <div className="text-white text-center flex items-center justify-center p-20">
+            <Image
+              width={30}
+              height={30}
+              src="/loading.gif"
+              alt="loading"
+            />
+            <p>Loading campaigns...</p>
+          </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {data?.map((campaign, index) => (
@@ -93,8 +102,7 @@ export default function Campaigns() {
                   {campaign.description}
                 </p>
                 <p className="mt-4 text-sm p-1">
-                  {BigInt(campaign.fundsRaised).toString()} Eth raised
-                  so far
+                  {BigInt(campaign.fundsRaised).toString()} Eth raised so far
                 </p>
                 <div className="mt-7 flex items-center justify-between">
                   <p className="bg-[#45554d] w-fit p-2 px rounded">

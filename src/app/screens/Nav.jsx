@@ -64,12 +64,12 @@ const Nav = () => {
           >
             Features
           </a>
-          <a
+          {/* <a
             href="#works"
             className="hover:ring-1 hover:ring-white p-2 px-4 rounded-full"
           >
             How it works
-          </a>
+          </a> */}
           <a
             href="#contributors"
             className="hover:ring-1 hover:ring-white p-2 px-4 rounded-full"
