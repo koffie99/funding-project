@@ -24,7 +24,7 @@ const Splash = () => {
         
         
         
-        <Link href="/userportal" className="text-white ring-[1px] mt-12 ring-white py-3 rounded-full px-8 flex items-center gap-2 ">
+        <Link href="/donorportal" className="text-white ring-[1px] mt-12 ring-white py-3 rounded-full px-8 flex items-center gap-2 ">
           <p className="font-regular">Get Started</p>
           
           <FaArrowRightLong />
