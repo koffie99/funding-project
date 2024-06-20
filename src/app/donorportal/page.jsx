@@ -21,6 +21,7 @@ export default function Campaigns() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedCampaign, setSelectedCampaign] = useState(null);
   const [donationAmount, setDonationAmount] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const contract = getContract({
     client,
@@ -57,6 +58,10 @@ export default function Campaigns() {
     }
   };
 
+  const filteredCampaigns = data?.filter((campaign) =>
+    campaign.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <main className="min-h-[100vh] bg-[#092635]">
       {/* nav */}
@@ -74,6 +79,8 @@ export default function Campaigns() {
                 className="bg-transparent text-white outline-none"
                 type="text"
                 placeholder="Search BlockBond..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
               />
             </div>
             <IoSearch className="text-white text-lg" />
@@ -94,7 +101,7 @@ export default function Campaigns() {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {data?.map((campaign, index) => (
+            {filteredCampaigns?.map((campaign, index) => (
               <div
                 key={index}
                 className="bg-[#142a35] text-white p-4 rounded shadow mb-4"
