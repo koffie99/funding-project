@@ -3,7 +3,6 @@ import React from "react"
 import { FaArrowRightLong } from "react-icons/fa6"
 import Nav from "./Nav"
 import Link from 'next/link';
-import Login from "@/components/Login"
 
 const Splash = () => {
   return (
@@ -15,6 +14,7 @@ const Splash = () => {
           height={600}
           src="/images/zkpass.png"
           className="md:h-[5vh] h-[3vh] object-contain"
+          alt="photo"
         />
         <h2 className="md:text-5xl text-3xl font-medium text-white md:leading-[60px] leading-[40px] md:w-[80%] w-full text-center">
           Empower change with{" "}

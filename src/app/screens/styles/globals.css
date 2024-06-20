@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html{
+  scroll-behavior: smooth;
+}
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.about-bg{
+  background-image: url('/images/bg.png');
+  background-size: cover;
+}
+
+.why-bg{
+  background-image: url('/images/why.png');
+  background-size: cover;
+}
+
+.contributors-bg{
+  background-image: url('/images/contributors-bg.png');
+  background-size: cover;
+
+}
+
+.features-bg{
+  background-image: url('/images/feature-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.login-bg{
+  background-image: url('/images/Login-bg.png');
+  background-size: cover;
+}
+
+.feat-bg{
+  background: linear-gradient(rgba(255,255,255, 0.3), rgba(255,255,255,0.8));
+  /* background-blend-mode: lighten; */
+  /* margin-bottom: 90px; */
+}
+
+.splash-bg{
+  background: linear-gradient(rgba(6, 16, 35, 0.6), rgba(6, 16, 35, 1)), url('/images/volunteer.jpg') center center;
+  background-size: cover;
+}

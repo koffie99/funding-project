@@ -1,0 +1,34 @@
+
+
+
+
+/* styles/Dashboardprofile.module.css */
+.profile-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+  
+  .profile-image {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+
+  
+  .profile-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  .profile-number {
+    font-size: 14px;
+    color: #666;
+  }

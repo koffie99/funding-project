@@ -1,12 +1,29 @@
-import React from 'react'
-import Link from 'next/link'
+"use client";
+import React, { useEffect } from "react";
+import Splash from "./screens/Splash";
+import About from "./screens/About";
+import Features from "./screens/Features";
+import Works from "./screens/Works";
+// import Contributors from "./screens/Contributors"
+import Footer from "./screens/Footer"
 
 const Home = () => {
-  return (
-    <div className='p-24'>
-      <Link href='/donorportal'>Donor</Link>
-    </div>
-  )
-}
+  // useEffect(() => {
+  //   location.href='/donorportal'
+  // },[])
 
-export default Home
+  return (
+    <div>
+      <Splash />
+      <About />
+      <Features />
+      <Works
+        images={["/images/kite.png", "/images/kite.png", "/images/kite.png"]}
+      />
+      {/* <Contributors /> */}
+      <Footer />
+    </div>
+  );
+};
+
+export default Home;
