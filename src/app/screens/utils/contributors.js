@@ -14,7 +14,7 @@ const contributors = [
     },
     {
         id: 3,
-        name: 'Daniel Iluonaze',
+        name: 'Daniel Uzoma Iluonaze',
         role:'Backend Developer ',
         photo: '/images/daniel.png'
     },

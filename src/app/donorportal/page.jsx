@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import Link from 'next/link'
+import Link from "next/link";
 import {
   createThirdwebClient,
   getContract,
@@ -15,6 +15,7 @@ import {
 } from "thirdweb/react";
 import { ethers } from "ethers";
 import { client } from "../client";
+import { IoSearch } from "react-icons/io5";
 
 export default function Campaigns() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -60,13 +61,26 @@ export default function Campaigns() {
     <main className="min-h-[100vh] bg-[#092635]">
       {/* nav */}
       <div className="bg-[#0e2029] h-[12vh] w-full flex items-center justify-between gap-2 px-16">
-        <Link href='/' className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">
           <Image width={40} height={40} src="/images/logo.png" alt="logo" />
           <p className="text-white">
             <span className="font-bold">Block</span>Bond
           </p>
         </Link>
-        <div className="p-4">
+        <div className="p-4 flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 ring-[1px] ring-[#ccc] p-2 rounded-full px-3">
+              <input
+                className="bg-transparent text-white outline-none"
+                type="text"
+                placeholder="Search BlockBond..."
+              />
+            </div>
+            <IoSearch className="text-white text-lg" />
+          </div>
+          <button className="bg-[#1EBF79] text-white p-2 rounded-full px-4">
+            + Raise Funds
+          </button>
           <ConnectButton client={client} />
         </div>
       </div>
@@ -75,12 +89,7 @@ export default function Campaigns() {
       <div className="p-8">
         {isLoading ? (
           <div className="text-white text-center flex items-center justify-center p-20">
-            <Image
-              width={30}
-              height={30}
-              src="/loading.gif"
-              alt="loading"
-            />
+            <Image width={30} height={30} src="/loading.gif" alt="loading" />
             <p>Loading campaigns...</p>
           </div>
         ) : (
