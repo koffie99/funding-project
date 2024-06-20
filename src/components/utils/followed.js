@@ -1,0 +1,77 @@
+const followed = [
+    {
+        photo: "",
+        campaign_title: "Heart Surgery for Tim",
+        campaign_description: "Raising funds for Tim's urgent heart surgery.",
+        campaign_category: "Health",
+        amount: 30000.00,
+        fundraiser_id: "FR20001",
+        is_team: false,
+        team_id: "",
+        start_date: "2024-03-01",
+        start_time: "08:00:00 UTC",
+        end_date: "2024-09-30",
+        end_time: "20:00:00 UTC",
+        progress: 15000.00,
+        percentage: 50.00,
+        is_complete: false,
+        location: "Accra, Ghana"
+        },
+        {
+        photo: "",
+        campaign_title: "Scholarships for STEM",
+        campaign_description: "Providing scholarships for underprivileged students in STEM fields.",
+        campaign_category: "Education",
+        amount: 20000.00,
+        fundraiser_id: "FR20002",
+        is_team: true,
+        team_id: "TM20002",
+        start_date: "2024-06-15",
+        start_time: "09:00:00 UTC",
+        end_date: "2024-11-15",
+        end_time: "18:00:00 UTC",
+        progress: 10000.00,
+        percentage: 50,
+        is_complete: false,
+        location: "Lagos, Nigeria"
+        },
+        {
+        photo: "",
+        campaign_title: "Tech Hub Incubator",
+        campaign_description: "Funding a space for startups to collaborate and innovate.",
+        campaign_category: "Business",
+        amount: 100000.00,
+        fundraiser_id: "FR20003",
+        is_team: true,
+        team_id: "TM20003",
+        start_date: "2024-01-10",
+        start_time: "10:00:00 UTC",
+        end_date: "2024-12-10",
+        end_time: "16:00:00 UTC",
+        progress: 60000.00,
+        percentage: 60.00,
+        is_complete: false,
+        location: "Nairobi, Kenya"
+        },
+        {
+        photo: "",
+        campaign_title: "Wildlife Rescue Center",
+        campaign_description: "Help us build a rescue center for injured wildlife.",
+        campaign_category: "Animal Welfare",
+        amount: 75000.00,
+        fundraiser_id: "FR20004",
+        is_team: false,
+        team_id: "",
+        start_date: "2023-03-18",
+        start_time: "07:30:00 UTC",
+        end_date: "2024-08-18",
+        end_time: "19:45:00 UTC",
+        progress: 37500.00,
+        percentage: 50.00,
+        is_complete: false,
+        location: "Bamako, Mali"
+        }
+        
+]
+
+export default followed

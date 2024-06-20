@@ -18,7 +18,7 @@ const inter = Inter({ subsets: ["latin"] })
 export default function Home() {
   return (
     <main
-      className={`flex min-h-screen flex-col bg-black`}
+      className={`flex min-h-screen flex-col`}
     >
       <div>
         {/* <Nav /> */}
