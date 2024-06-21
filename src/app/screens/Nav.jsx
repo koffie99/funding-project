@@ -77,7 +77,10 @@ const Nav = () => {
             Contributors
           </a>
         </div>
-        <Link href='/donorportal' className="hidden md:flex border-2 text-black border-[#fff] bg-white px-5 rounded-full items-center gap-2 py-1">
+        <Link
+          href="/donorportal"
+          className="hidden md:flex border-2 text-black border-[#fff] bg-white px-5 rounded-full items-center gap-2 py-1"
+        >
           <p>Get Started</p>
         </Link>
       </div>
@@ -124,20 +127,12 @@ const Nav = () => {
           >
             Contributors
           </a>
-          <div className="border-2 border-[#3CB371] rounded-full px-1 flex items-center gap-4 py-1">
-            <button
-              onClick={openLoginModal}
-              className="text-white py-2 pr-3 hover:bg-[#3CB371] rounded-tl-full pl-4 rounded-bl-full text-sm border-r-[1px] border-white transition-colors duration-300"
-            >
-              Login
-            </button>
-            <button
-              onClick={openSignupModal}
-              className="text-white py-2 hover:bg-[#3CB371] rounded-tr-full pl-1 pr-3 text-sm transition-colors duration-300"
-            >
-              Sign Up
-            </button>
-          </div>
+          <Link
+            href="/donorportal"
+            className="hidden md:flex border-2 text-black border-[#fff] bg-white px-5 rounded-full items-center gap-2 py-1"
+          >
+            <p>Get Started</p>
+          </Link>
         </div>
       )}
 
