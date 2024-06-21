@@ -64,7 +64,7 @@
           contract,
           method: "donate",
           params: [selectedCampaign.index],
-          value: ethers.utils.parseEther(donationAmount),
+          value: ethers.utils(donationAmount),
         });
         sendTransaction(transaction);
         setModalOpen(false);
@@ -86,7 +86,7 @@
             newCampaign.title,
             newCampaign.description,
             newCampaign.photoUrl,
-            ethers.utils.parseEther(newCampaign.goal),
+            ethers.utils(newCampaign.goal),
             newCampaign.durationInDays,
           ],
         });
