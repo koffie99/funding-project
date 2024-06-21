@@ -1,5 +1,5 @@
 import React from 'react'
-import Profilecard from "./Profilecard"
+import Profilecard from "./ProfileCard"
 import contributors from './utils/contributors';
 
 
