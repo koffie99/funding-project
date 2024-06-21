@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 // import Profilecard from "./ProfileCard"
-import Profilecard from './Profilecard'
+import Profilecard from '../app/screens/ProfileCard'
 import contributors from './utils/contributors';
 
 
