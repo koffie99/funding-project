@@ -1,37 +1,37 @@
-import Image from "next/image"
-import Link from "next/link"
-import React, { useState } from "react"
-import { FaBars, FaTimes } from "react-icons/fa"
-import Modal from "react-modal"
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import Modal from "react-modal";
 
 const Nav = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false)
-  const [isSignupModalOpen, setIsSignupModalOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
 
   const closeMenu = () => {
-    setIsOpen(false)
-  }
+    setIsOpen(false);
+  };
 
   const openLoginModal = () => {
-    setIsLoginModalOpen(true)
-  }
+    setIsLoginModalOpen(true);
+  };
 
   const closeLoginModal = () => {
-    setIsLoginModalOpen(false)
-  }
+    setIsLoginModalOpen(false);
+  };
 
   const openSignupModal = () => {
-    setIsSignupModalOpen(true)
-  }
+    setIsSignupModalOpen(true);
+  };
 
   const closeSignupModal = () => {
-    setIsSignupModalOpen(false)
-  }
+    setIsSignupModalOpen(false);
+  };
 
   return (
     <nav className="w-full py-4 px-6 md:px-10 text-white relative">
@@ -77,20 +77,9 @@ const Nav = () => {
             Contributors
           </a>
         </div>
-        <div className="hidden md:flex border-2 border-[#3CB371] rounded-full px-1 items-center gap-2 py-1">
-          <button
-            onClick={openLoginModal}
-            className="text-white py-2 px-3 hover:bg-[#3CB371] rounded-tl-full rounded-bl-full text-sm border-r-[1px] border-white transition-colors duration-300"
-          >
-            Login
-          </button>
-          <button
-            onClick={openSignupModal}
-            className="text-white py-2 px-3 hover:bg-[#3CB371] rounded-tr-full rounded-br-full text-sm transition-colors duration-300"
-          >
-            Sign Up
-          </button>
-        </div>
+        <Link href='/donorportal' className="hidden md:flex border-2 text-white border-[#fff] bg-white px-5 rounded-full items-center gap-2 py-1">
+          <p>Get Started</p>
+        </Link>
       </div>
       {isOpen && (
         <div className="absolute top-0 left-0 w-full h-fit py-20 bg-white bg-opacity-30 backdrop-blur-md p-4 md:hidden flex flex-col items-center space-y-4">
@@ -216,7 +205,9 @@ const Nav = () => {
           </button>
           <div className="w-full h-full flex md:flex-row flex-col rounded-2xl">
             <div className="md:w-[40%] w-full h-full flex flex-col items-center justify-center">
-              <p className="text-center">Get started with these 3 easy steps!</p>
+              <p className="text-center">
+                Get started with these 3 easy steps!
+              </p>
               <div className="flex flex-col gap-2 mt-4 w-full">
                 <input
                   type="email"
@@ -253,7 +244,7 @@ const Nav = () => {
         </div>
       </Modal>
     </nav>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;
