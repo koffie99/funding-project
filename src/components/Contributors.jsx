@@ -1,7 +1,6 @@
 "use client"
 import React from 'react'
 import Profilecard from "./ProfileCard"
-import styles from '../styles/Profilecard.module.css';
 import contributors from './utils/contributors';
 
 
