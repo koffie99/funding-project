@@ -1,35 +1,22 @@
 const contributors = [
     {
         id: 1,
-        name: 'Joshua Koffie',
+        name: 'Gideon Asare Twum',
         role:'Team Lead',
-        photo: '/images/josh.png'
+        photo: '/images/deon.jpg'
     },
     {
         id: 2,
         name: 'Jennifer Harrison',
-        role:'frontend Developer ',
-        photo: '/images/jennifer.png'
+        role:'Frontend Developer ',
+        photo: '/images/jenny.jpg'
     
     },
     {
         id: 3,
-        name: 'Daniel Iluonaze',
-        role:'Backend Developer ',
-        photo: '/images/daniel.png'
-    },
-    {
-        id: 4,
-        name: 'Frank Mugwaneza',
-        role:' Research Lead',
-        photo: '/images/frank.png'
-        
-    },
-    {
-        id: 5,
         name: 'Eunice M. Kesseh',
         role:' UI/UX Designer',
-        photo: '/images/eun.png'
+        photo: '/images/eu.jpg'
     }
     ]
     
