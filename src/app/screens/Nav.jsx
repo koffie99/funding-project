@@ -77,7 +77,7 @@ const Nav = () => {
             Contributors
           </a>
         </div>
-        <Link href='/donorportal' className="hidden md:flex border-2 text-white border-[#fff] bg-white px-5 rounded-full items-center gap-2 py-1">
+        <Link href='/donorportal' className="hidden md:flex border-2 text-black border-[#fff] bg-white px-5 rounded-full items-center gap-2 py-1">
           <p>Get Started</p>
         </Link>
       </div>
